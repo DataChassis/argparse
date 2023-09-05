@@ -136,6 +136,21 @@ func NewParser(name string, description string) *Parser {
 	return p
 }
 
+// NewParserNoHelp mirrors NewParser, but does not set up the help handler by default,
+// freeing the "h" option for other things
+// To add the help back in, call .
+func NewParserNoHelp(name string, description string) *Parser {
+	p := &Parser{}
+
+	p.name = name
+	p.description = description
+
+	p.args = make([]*arg, 0)
+	p.commands = make([]*Command, 0)
+
+	return p
+}
+
 // NewCommand will create a sub-command and propagate all necessary fields.
 // All commands are always at the beginning of the arguments.
 // Parser can have commands and those commands can have sub-commands,

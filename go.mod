@@ -1,3 +1,3 @@
-module github.com/akamensky/argparse
+module github.com/datachassis/argparse
 
-go 1.13
+go 1.18
